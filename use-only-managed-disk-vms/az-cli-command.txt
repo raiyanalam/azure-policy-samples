@@ -1,13 +1,7 @@
 
 
 
-az policy definition create --name 'use-managed-disk-vm' --display-name '[rai] Deny VM if not using Managed Disk' --description 'Deny VM if not using Managed Disk' --rules 'use-managed-disk-vm.json' --params 'params.json' --mode All
+az policy definition create --name 'use-only-managed-disks-vm' --display-name '[rai] Deny VM if not using managed disk vm' --description 'deny non managed disk vm' --rules 'use-managed-disk-vm.json' --mode All
 
-az policy assignment create --name <assignmentname> --scope <scope> --policy "use-managed-disk-vm" 
+az policy assignment create --name 'rai-assign-deny-vm-managed-disk' --scope '/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/rai-policy-rg' --policy "use-only-managed-disks-vm" 
 
-
-az policy definition create 
---name 'use-managed-disk-vm' 
---rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Compute/use-managed-disk-vm/azurepolicy.rules.json' 
---params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Compute/use-managed-disk-vm/azurepolicy.parameters.json' 
---mode All
