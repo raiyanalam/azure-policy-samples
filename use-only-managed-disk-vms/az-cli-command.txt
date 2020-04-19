@@ -1,0 +1,13 @@
+
+
+
+az policy definition create --name 'use-managed-disk-vm' --display-name '[rai] Deny VM if not using Managed Disk' --description 'Deny VM if not using Managed Disk' --rules 'use-managed-disk-vm.json' --params 'params.json' --mode All
+
+az policy assignment create --name <assignmentname> --scope <scope> --policy "use-managed-disk-vm" 
+
+
+az policy definition create 
+--name 'use-managed-disk-vm' 
+--rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Compute/use-managed-disk-vm/azurepolicy.rules.json' 
+--params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Compute/use-managed-disk-vm/azurepolicy.parameters.json' 
+--mode All
