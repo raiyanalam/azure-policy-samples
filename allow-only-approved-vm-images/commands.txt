@@ -1,0 +1,11 @@
+ '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage' or 
+
+
+
+ /subscriptions/afc11291-9826-46be-b852-70349146ddf8/Providers/Microsoft.Compute/Locations/eastus2/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/18.04-LTS/Versions/Latest
+ /subscriptions/afc11291-9826-46be-b852-70349146ddf8/Providers/Microsoft.Compute/Locations/eastus2/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/18.04-LTS/Versions/18.04.201805220
+ 
+
+
+
+/subscriptions/afc11291-9826-46be-b852-70349146ddf8/providers/Microsoft.Authorization/policyDefinitions/

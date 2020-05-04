@@ -1,0 +1,44 @@
+{
+    "properties": {
+      "displayName": "[rai] allow only approved vm images",
+      "policyType": "Custom",
+      "mode": "All",
+      "metadata": {
+        "createdBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+        "createdOn": "2020-04-20T03:34:51.4318014Z",
+        "updatedBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+        "updatedOn": "2020-04-20T03:35:17.6351987Z"
+      },
+      "parameters": {
+        "imageIds": {
+          "type": "Array",
+          "metadata": {
+            "displayName": "Approved VM images",
+            "description": "The list of approved VM images. Example values: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage' or /Subscriptions/<subscriptionId>/Providers/Microsoft.Compute/Locations/centralus/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2016-Datacenter/Versions/2016.127.20180510'"
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Compute/virtualMachines"
+            },
+            {
+              "not": {
+                "field": "Microsoft.Compute/imageId",
+                "in": "[parameters('imageIds')]"
+              }
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    },
+    "id": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/providers/Microsoft.Authorization/policyDefinitions/d115b0af-e445-428d-b8d2-c22bb1a07770",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "d115b0af-e445-428d-b8d2-c22bb1a07770"
+  }
