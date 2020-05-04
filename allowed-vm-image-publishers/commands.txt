@@ -1,0 +1,6 @@
+
+
+az policy definition create --name '[rai] allowed-image-publishers-policy2' --display-name 'Allowed image publishers only' --description 'This policy ensures that only allowed image publisher offerings are selected from the image repository.' --rules './allowed-vm-image-publishers-rule.json' --params './allowed-vm-images-publishers-params.json' --mode Indexed
+
+
+az policy assignment create --name '' --scope '/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/rai-policy-rg' --policy 'allowed-image-publishers-policy' --params 'param-vals.json'
