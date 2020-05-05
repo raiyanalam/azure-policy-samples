@@ -5,3 +5,13 @@ az policy definition create --name '[rai] allowed-image-publishers-policy2' --di
 
 az policy assignment create --name '[rai]assignment-allowed-image-publishers' --scope '/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/rai-policy-rg' --policy '[rai] allowed-image-publishers-policy2' --params "{'listOfAllowedimagePublishers':{'value': [ 'RedHat', 'MicrosoftWindowsServer']}}"
 
+
+
+
+Az cli commands for using with ADO:
+
+call az policy definition create --name "[rai] allowed-image-publishers-policy3" --display-name "Allowed image publishers only" --description "This policy ensures that only allowed image publisher offerings are selected from the image repository." --rules "$(System.DefaultWorkingDirectory)\_raiyanalam_azure-policy-samples\allowed-vm-image-publishers\allowed-vm-image-publishers-rule.json" --params "$(System.DefaultWorkingDirectory)\_raiyanalam_azure-policy-samples\allowed-vm-image-publishers\allowed-vm-images-publishers-params.json" --mode Indexed
+call az policy assignment create --name "[rai]assignment-allowed-image-publishers3" --scope "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/rai-policy-rg" --policy "[rai] allowed-image-publishers-policy3" --params "{'listOfAllowedimagePublishers':{'value': [ 'RedHat', 'MicrosoftWindowsServer']}}"
+
+link to working pipeline run: https://releasemanagementpm.visualstudio.com/ZenithWorks/_releaseProgress?_a=release-pipeline-progress&releaseId=117
+
