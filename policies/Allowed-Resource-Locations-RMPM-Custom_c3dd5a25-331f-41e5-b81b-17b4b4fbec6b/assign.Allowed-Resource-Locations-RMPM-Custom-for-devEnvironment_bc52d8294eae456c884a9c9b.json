@@ -1,0 +1,55 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Allowed Resource Locations RMPM Custom for devEnvironment",
+  "policyDefinitionId": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/providers/Microsoft.Authorization/policyDefinitions/c3dd5a25-331f-41e5-b81b-17b4b4fbec6b",
+  "scope": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev",
+  "notScopes": [],
+  "parameters": {
+   "listOfAllowedLocations": {
+    "value": [
+     "eastus",
+     "centralus",
+     "centralusstage",
+     "eastusstage",
+     "eastus2",
+     "eastus2stage",
+     "northcentralus",
+     "northcentralusstage",
+     "southcentralus",
+     "southcentralusstage",
+     "westcentralus",
+     "westus",
+     "westusstage",
+     "westus2",
+     "westus2stage"
+    ]
+   }
+  },
+  "metadata": {
+   "assignedBy": "Raiyan Alam",
+   "parameterScopes": {
+    "listOfAllowedLocations": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev"
+   },
+   "createdBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+   "createdOn": "2020-09-02T10:30:29.2653879Z",
+   "updatedBy": "e15962ac-b533-4667-b541-c9408d0544a4",
+   "updatedOn": "2020-09-02T14:09:14.4738053Z",
+   "automatedBy": "Github Actions",
+   "gitHubPolicy": {
+    "digest": "abc1fcc999d0c55e91c8f1527e730661a466ec18",
+    "repoName": "raiyanalam/azure-policy-as-code",
+    "commitSha": "db9c13f8168c5f2b78ba6d39b1eede92d17bd08c",
+    "runUrl": "https://github.com/raiyanalam/azure-policy-as-code/actions/runs/236168627",
+    "filepath": "policies/Allowed-Resource-Locations-RMPM-Custom_c3dd5a25-331f-41e5-b81b-17b4b4fbec6b/assign.Allowed-Resource-Locations-RMPM-Custom-for-devEnvironment_bc52d8294eae456c884a9c9b.json"
+   }
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev/providers/Microsoft.Authorization/policyAssignments/bc52d8294eae456c884a9c9b",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "bc52d8294eae456c884a9c9b"
+}

@@ -1,0 +1,56 @@
+{
+ "properties": {
+  "displayName": "Allowed Resource Locations RMPM Custom",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region.",
+  "metadata": {
+   "category": "General",
+   "createdBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+   "createdOn": "2020-09-02T10:23:47.6760301Z",
+   "updatedBy": "e15962ac-b533-4667-b541-c9408d0544a4",
+   "updatedOn": "2020-09-03T03:56:38.5935881Z",
+   "gitHubPolicy": {
+    "digest": "01a754a49f95b813c8db2fc6084cdd3d70276854",
+    "repoName": "raiyanalam/azure-policy-as-code",
+    "commitSha": "2ea48715c1fd02c269b7d840d764a3032cf3e149",
+    "runUrl": "https://github.com/raiyanalam/azure-policy-as-code/actions/runs/237144912",
+    "filepath": "policies/Allowed-Resource-Locations-RMPM-Custom_c3dd5a25-331f-41e5-b81b-17b4b4fbec6b"
+   }
+  },
+  "parameters": {
+   "listOfAllowedLocations": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed locations",
+     "description": "The list of locations where resources will be allowed to be created",
+     "strongType": "location"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "location",
+      "notIn": "[parameters('listOfAllowedLocations')]"
+     },
+     {
+      "field": "location",
+      "notEquals": "global"
+     },
+     {
+      "field": "type",
+      "notEquals": "Microsoft.AzureActiveDirectory/b2cDirectories"
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/providers/Microsoft.Authorization/policyDefinitions/c3dd5a25-331f-41e5-b81b-17b4b4fbec6b",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "c3dd5a25-331f-41e5-b81b-17b4b4fbec6b"
+}
